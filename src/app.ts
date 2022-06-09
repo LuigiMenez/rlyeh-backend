@@ -23,10 +23,6 @@ app.use(express.json());
 
 app.use(router);
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello");
-});
-
 app.listen(port, () => {
   return console.log(`Server is listening on ${port}`);
 });
