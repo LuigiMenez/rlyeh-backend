@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";
+import { Employee } from "./models/employee";
 
 dotenv.config();
 
@@ -10,7 +11,7 @@ const myConnectDB = new DataSource({
   useUnifiedTopology: true,
   synchronize: true,
   logging: true,
-  entities: ["src/models/*.*"],
+  entities: [Employee],
 });
 
 export default myConnectDB;
