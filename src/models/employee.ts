@@ -3,7 +3,7 @@ import { Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
 @Entity()
 export class Employee {
   @ObjectIdColumn()
-  id: ObjectID;
+  _id: ObjectID;
 
   @Column()
   firstName: string;
@@ -12,7 +12,7 @@ export class Employee {
   lastName: string;
 
   constructor(id: ObjectID, firstName: string, lastName: string) {
-    this.id = id;
+    this._id = id;
     this.firstName = firstName;
     this.lastName = lastName;
   }
