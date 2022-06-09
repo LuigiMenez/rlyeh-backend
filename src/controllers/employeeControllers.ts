@@ -3,7 +3,7 @@ import { Employee } from "../models/employee";
 import myConnectDB from "../connectdb";
 
 export const findEmployee = async (req: Request, res: Response) => {
-  const [employees] = await myConnectDB.getMongoRepository(Employee).find();
+  const employees = await myConnectDB.getMongoRepository(Employee).find();
   try {
     res.json(employees);
   } catch (err) {
