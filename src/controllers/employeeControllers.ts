@@ -22,14 +22,12 @@ export const addEmployee = async (req: Request, res: Response) => {
   const employee: any = await myConnectDB
     .getMongoRepository(Employee)
     .insertOne(req.body);
-  try {
-    const results = await myConnectDB
-      .getMongoRepository(Employee)
-      .save(employee);
-    return res.send(results);
-  } catch (err) {
-    res.status(500).send(err);
-  }
+
+  const results = await myConnectDB
+    .getMongoRepository(Employee)
+    .save(employee.ops[0]);
+
+  return res.send(results);
 };
 
 export const updateEmployee = async (req: Request, res: Response) => {
