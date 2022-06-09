@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import { Employee } from "../models/employee";
 import myConnectDB from "../connectdb";
-import { getMongoManager } from "typeorm";
-import { userInfo } from "os";
 
 export const findEmployee = async (req: Request, res: Response) => {
   const employees = await myConnectDB.getMongoRepository(Employee).find();
@@ -28,7 +26,6 @@ export const addEmployee = async (req: Request, res: Response) => {
   const results = await myConnectDB
     .getMongoRepository(Employee)
     .save(employee.ops[0]);
-  console.log(employee.ops[0]);
 
   return res.send(results);
 };
