@@ -1,19 +1,17 @@
 import { Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
+import { Profile } from "./skills";
 
 @Entity()
 export class Employee {
   @ObjectIdColumn()
-  _id: ObjectID;
+  _id: ObjectID | undefined;
 
   @Column()
-  firstName: string;
+  firstName: string | undefined;
 
   @Column()
-  lastName: string;
+  lastName: string | undefined;
 
-  constructor(id: ObjectID, firstName: string, lastName: string) {
-    this._id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
+  @Column((type) => Profile)
+  profile: Profile | undefined;
 }

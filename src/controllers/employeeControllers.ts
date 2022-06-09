@@ -14,7 +14,7 @@ export const findEmployee = async (req: Request, res: Response) => {
 export const findOneEmployee = async (req: Request, res: Response) => {
   const results = await myConnectDB
     .getMongoRepository(Employee)
-    .findOneBy({ id: req.params._id });
+    .findOneBy(req.params.id);
   return res.send(results);
 };
 
@@ -33,7 +33,7 @@ export const addEmployee = async (req: Request, res: Response) => {
 export const updateEmployee = async (req: Request, res: Response) => {
   const employee: any = await myConnectDB
     .getMongoRepository(Employee)
-    .findOneBy({ id: req.params._id });
+    .findOneBy(req.params.id);
   myConnectDB.getMongoRepository(Employee).merge(employee, req.body);
   const results = await myConnectDB.getMongoRepository(Employee).save(employee);
   return res.send(results);
