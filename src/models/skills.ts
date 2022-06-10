@@ -1,6 +1,6 @@
-import { Entity, ObjectID, ObjectIdColumn, Column } from "typeorm";
+import { Column } from "typeorm";
 
-export class Profile {
+export class Skills {
   @Column()
   about: string | undefined;
 

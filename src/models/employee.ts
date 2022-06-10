@@ -1,5 +1,5 @@
 import { Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
-import { Profile } from "./skills";
+import { Skills } from "./skills";
 
 @Entity()
 export class Employee {
@@ -12,6 +12,6 @@ export class Employee {
   @Column()
   lastName: string | undefined;
 
-  @Column((type) => Profile)
-  profile: Profile | undefined;
+  @Column((type) => Skills)
+  skills: Skills | undefined;
 }
