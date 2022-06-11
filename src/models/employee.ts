@@ -4,14 +4,14 @@ import { Skills } from "./skills";
 @Entity()
 export class Employee {
   @ObjectIdColumn()
-  _id: ObjectID | undefined;
+  _id!: ObjectID;
 
   @Column()
-  firstName: string | undefined;
+  firstName!: string;
 
   @Column()
-  lastName: string | undefined;
+  lastName!: string;
 
   @Column((type) => Skills)
-  skills: Skills | undefined;
+  skills!: Skills;
 }
