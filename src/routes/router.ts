@@ -1,18 +1,27 @@
 import express from "express";
 import {
-  addEmployee,
   findEmployee,
   findOneEmployee,
+  employeeAll,
+} from "../controllers/employeeControllers";
+
+import {
+  addEmployee,
   deleteEmployee,
   updateEmployee,
-} from "../controllers/employeeControllers";
+} from "../controllers/rhControllers";
 
 const router = express.Router();
 
-router.get("/employee", findEmployee);
-router.get("/employee/:id", findOneEmployee);
+// Router for RH
 router.post("/employee", addEmployee);
-router.put("/employee/:id", updateEmployee);
 router.delete("/employee/:id", deleteEmployee);
+
+// Router for Lead Dev
+
+router.get("/employee", employeeAll);
+router.get("/employee/:firstName", findEmployee);
+router.get("/employee/:id", findOneEmployee);
+router.put("/employee/:id", updateEmployee);
 
 export default router;

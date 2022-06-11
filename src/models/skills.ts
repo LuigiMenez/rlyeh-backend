@@ -2,11 +2,11 @@ import { Column } from "typeorm";
 
 export class Skills {
   @Column()
-  about: string | undefined;
+  about!: string;
 
   @Column()
-  education: string | undefined;
+  education!: string;
 
   @Column()
-  career: string | undefined;
+  career!: string;
 }
