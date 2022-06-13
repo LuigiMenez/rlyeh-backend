@@ -7,10 +7,10 @@ export class Employee {
   _id!: ObjectID;
 
   @Column()
-  firstName!: string;
+  firstName!: any;
 
   @Column()
-  lastName!: string;
+  lastName: any;
 
   @Column((type) => Skills)
   skills!: Skills;

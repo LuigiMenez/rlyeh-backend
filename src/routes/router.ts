@@ -18,10 +18,10 @@ router.post("/employee", addEmployee);
 router.delete("/employee/:id", deleteEmployee);
 
 // Router for Lead Dev
-
-router.get("/employee", employeeAll);
-router.get("/employee/:firstName", findEmployee);
+router.get("/employees", employeeAll);
 router.get("/employee/:id", findOneEmployee);
+router.get("/employees/:firstName", findEmployee);
+
 router.put("/employee/:id", updateEmployee);
 
 export default router;

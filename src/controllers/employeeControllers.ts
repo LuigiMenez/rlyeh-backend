@@ -5,10 +5,12 @@ import myConnectDB from "../connectdb";
 const db = myConnectDB.getMongoRepository(Employee);
 
 export const findEmployee = async (req: Request, res: Response) => {
-  const [employees] = await db.find({
-    where: { firstName: req.params.firstName },
-  });
   try {
+    const [employees] = await db.find({
+      where: {
+        firstName: { $eq: req.params.firstName },
+      },
+    });
     res.json(employees.lastName);
   } catch (err) {
     res.status(500).send(err);
@@ -16,8 +18,8 @@ export const findEmployee = async (req: Request, res: Response) => {
 };
 
 export const employeeAll = async (req: Request, res: Response) => {
-  const allEmployees = await db.find();
   try {
+    const allEmployees = await db.find();
     res.json(allEmployees);
   } catch (err) {
     res.status(500).send(err);
