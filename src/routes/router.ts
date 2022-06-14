@@ -1,16 +1,12 @@
 import express from "express";
-import {
-  findEmployee,
-  findOneEmployee,
-  employeeAll,
-} from "../controllers/commonControllers";
+import { findOneEmployee, employeeAll } from "../controllers/commonControllers";
+
 import { employeeSkills } from "../controllers/leadDevControllers";
 
 import {
   addEmployee,
   deleteEmployee,
   techSkillsByEmployee,
-  updateEmployee,
 } from "../controllers/rhControllers";
 
 const router = express.Router();
@@ -26,8 +22,5 @@ router.get("/employee/:id/techskills", techSkillsByEmployee);
 
 // Router for Lead Dev
 router.get("/employee/:id/skills", employeeSkills);
-
-router.get("/employees/:firstName", findEmployee);
-router.put("/employee/:id", updateEmployee);
 
 export default router;

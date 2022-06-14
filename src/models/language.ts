@@ -2,10 +2,10 @@ import { Column } from "typeorm";
 
 export class Language {
   @Column()
-  nameLanguage!: any;
+  nameLanguage!: string;
 
   @Column()
-  level!: any;
+  level!: string;
 
   constructor(nameLanguage: any, level: any) {
     this.nameLanguage = nameLanguage;
