@@ -15,6 +15,11 @@ export const deleteEmployee = async (req: Request, res: Response) => {
   return res.send(results);
 };
 
+export const techSkillsByEmployee = async (req: Request, res: Response) => {
+  const results = await db.findOneBy(req.params.id);
+  return res.send(results?.skills.techSkills);
+};
+
 export const updateEmployee = async (req: Request, res: Response) => {
   const employee: any = await db.findOneBy(req.params.id);
   db.merge(employee, req.body);
