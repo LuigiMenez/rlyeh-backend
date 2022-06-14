@@ -12,6 +12,9 @@ export class Employee {
   @Column()
   lastName: any;
 
+  @Column()
+  service!: any;
+
   @Column((type) => Skills)
   skills!: Skills;
 }
