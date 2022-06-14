@@ -19,10 +19,3 @@ export const techSkillsByEmployee = async (req: Request, res: Response) => {
   const results = await db.findOneBy(req.params.id);
   return res.send(results?.skills.techSkills);
 };
-
-export const updateEmployee = async (req: Request, res: Response) => {
-  const employee: any = await db.findOneBy(req.params.id);
-  db.merge(employee, req.body);
-  const results = await db.save(employee);
-  return res.send(results);
-};
