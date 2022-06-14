@@ -1,12 +1,7 @@
 import { Column } from "typeorm";
+import { TechSkills } from "./techSkills";
 
 export class Skills {
-  @Column()
-  about!: string;
-
-  @Column()
-  education!: string;
-
-  @Column()
-  career!: string;
+  @Column((type) => TechSkills)
+  techSkills!: TechSkills[];
 }
