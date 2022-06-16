@@ -10,7 +10,7 @@ export class Employee {
   firstName!: string;
 
   @Column()
-  lastName!: string;
+  lastName!: any;
 
   @Column()
   service!: string;
