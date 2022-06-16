@@ -1,5 +1,9 @@
 import express from "express";
-import { findOneEmployee, employeeAll } from "../controllers/commonControllers";
+import {
+  findOneEmployee,
+  employeeAll,
+  search,
+} from "../controllers/commonControllers";
 
 import { employeeSkills } from "../controllers/leadDevControllers";
 
@@ -14,7 +18,7 @@ const router = express.Router();
 // Router common
 router.get("/employees", employeeAll);
 router.get("/employee/:id", findOneEmployee);
-
+router.get("/:lastName", search);
 // Router for RH
 router.post("/employee", addEmployee);
 router.delete("/employee/:id", deleteEmployee);
