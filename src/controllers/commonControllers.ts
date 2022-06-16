@@ -14,6 +14,10 @@ export const employeeAll = async (req: Request, res: Response) => {
 };
 
 export const findOneEmployee = async (req: Request, res: Response) => {
-  const results = await db.findOneBy(req.params.id);
-  return res.send(results);
+  try {
+    const results = await db.findOneBy(req.params.id);
+    return res.send(results);
+  } catch (err) {
+    res.status(500).send(err);
+  }
 };

@@ -18,9 +18,9 @@ router.get("/employee/:id", findOneEmployee);
 // Router for RH
 router.post("/employee", addEmployee);
 router.delete("/employee/:id", deleteEmployee);
-router.get("/employee/:id/techskills", techSkillsByEmployee);
+router.get("/techskills/:id", techSkillsByEmployee);
 
 // Router for Lead Dev
-router.get("/employee/:id/skills", employeeSkills);
+router.get("/skills/:id", employeeSkills);
 
 export default router;
